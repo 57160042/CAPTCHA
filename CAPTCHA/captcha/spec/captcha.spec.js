@@ -286,6 +286,11 @@ describe("CATPCHA", function() {
       expect(app.generate()).toEqual('five+3');
     });
 
+    it('should return "three+7" when input is 2,1,3,7', function() {
+      let app = new captcha(pattern,1,3,7);
+      expect(app.generate()).toEqual('three+7');
+    });
+
   });
 
 });
