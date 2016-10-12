@@ -216,6 +216,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('3+two');
       });
 
+      it('should return "4+six" when input is 1,1,4,6', function() {
+        let app = new captcha(pattern,1,4,6);
+        expect(app.generate()).toEqual('4+six');
+      });
+
   });
 
 });
