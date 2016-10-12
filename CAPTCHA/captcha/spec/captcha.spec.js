@@ -311,6 +311,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('one-3');
     });
 
+    it('should return "four-9" when input is 2,2,4,9', function() {
+        let app = new captcha(pattern,2,4,9);
+        expect(app.generate()).toEqual('four-9');
+    });
+
   });
 
 });
