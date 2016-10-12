@@ -316,6 +316,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('four-9');
     });
 
+    it('should return "five-7" when input is 2,2,5,7', function() {
+        let app = new captcha(pattern,2,5,7);
+        expect(app.generate()).toEqual('five-7');
+    });
+
   });
 
 });
