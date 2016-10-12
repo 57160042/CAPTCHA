@@ -301,6 +301,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('nine+1');
     });
 
+    it('should return "eight-8" when input is 2,2,8,8', function() {
+        let app = new captcha(pattern,2,8,8);
+        expect(app.generate()).toEqual('neight-8');
+    });
+
   });
 
 });
