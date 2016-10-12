@@ -251,6 +251,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('7-zero');
       });
 
+      it('should return "2-three" when input is 1,2,2,3', function() {
+        let app = new captcha(pattern,2,2,3);
+        expect(app.generate()).toEqual('2-three');
+      });
+
   });
 
 });
