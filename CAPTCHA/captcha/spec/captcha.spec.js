@@ -291,11 +291,15 @@ describe("CATPCHA", function() {
       expect(app.generate()).toEqual('three+7');
     });
 
+    it('should return "four+8" when input is 2,1,4,8', function() {
+        let app = new captcha(pattern,1,4,8);
+        expect(app.generate()).toEqual('four+8');
+    });
 
-        it('should return "four+8" when input is 2,1,4,8', function() {
-          let app = new captcha(pattern,1,4,8);
-          expect(app.generate()).toEqual('four+8');
-        });
+    it('should return "nine+1" when input is 2,1,9,1', function() {
+        let app = new captcha(pattern,1,9,1);
+        expect(app.generate()).toEqual('nine+1');
+    });
 
   });
 
