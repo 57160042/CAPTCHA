@@ -303,7 +303,12 @@ describe("CATPCHA", function() {
 
     it('should return "eight-8" when input is 2,2,8,8', function() {
         let app = new captcha(pattern,2,8,8);
-        expect(app.generate()).toEqual('neight-8');
+        expect(app.generate()).toEqual('eight-8');
+    });
+
+    it('should return "one-3" when input is 2,2,1,3', function() {
+        let app = new captcha(pattern,2,1,3);
+        expect(app.generate()).toEqual('one-3');
     });
 
   });
