@@ -276,6 +276,11 @@ describe("CATPCHA", function() {
       expect(app.generate()).toEqual('seven+4');
     });
 
+    it('should return "six+9" when input is 2,1,6,9', function() {
+      let app = new captcha(pattern,1,6,9);
+      expect(app.generate()).toEqual('six+9');
+    });
+
   });
 
 });
