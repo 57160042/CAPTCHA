@@ -1,4 +1,4 @@
-function captcha(var PatternValue,var OperatorValue,var LeftoperandValue,var RigthoperandValue) {
+function captcha(PatternValue,OperatorValue,LeftoperandValue,RigthoperandValue) {
 
   var left = new leftoperand(PatternValue,LeftoperandValue);
   var oper = new operator(OperatorValue);
@@ -6,24 +6,27 @@ function captcha(var PatternValue,var OperatorValue,var LeftoperandValue,var Rig
 
     this.generate = function (){
         return left+oper+right;
-    }
+    };
 
 
 }
 
 
 function operator(OperatorValue) {
+  this.toString = function (){
     if (OperatorValue === 1){
       return "+";
     }
     if (OperatorValue === 2){
       return "-";
     }
+  }
 }
 
 
 
 function leftoperand(PatternValue,LeftoperandValue) {
+  this.toString = function (){
     if(PatternValue === 1 ){
       if(LeftoperandValue === 0){
         left = "0";
@@ -109,13 +112,13 @@ function leftoperand(PatternValue,LeftoperandValue) {
         return left;
       }
     }
-
+  }
 }
 
 
 
 function rigthoperand(PatternValue,RigthoperandValue) {
-
+  this.toString = function (){
   if(PatternValue === 1){
     if(RigthoperandValue === 0){
       left = "zero";
@@ -201,5 +204,18 @@ function rigthoperand(PatternValue,RigthoperandValue) {
       return left;
     }
   }
-
+  }
 }
+
+describe("CATPCHA", function() {
+  describe("Pattrn is 1", function() {
+    const pattern = 1
+
+      it('should return "3+two" when input is 1,1,3,2', function() {
+        let app = new captcha(pattern,1,3,2);
+        expect(app.generate()).toEqual('3+two');
+      });
+
+  });
+
+});
