@@ -268,4 +268,14 @@ describe("CATPCHA", function() {
 
   });
 
+  describe("Pattrn is 2", function() {
+    const pattern = 2
+
+    it('should return "seven+4" when input is 2,1,7,4', function() {
+      let app = new captcha(pattern,1,7,4);
+      expect(app.generate()).toEqual('seven+4');
+    });
+
+  });
+
 });
