@@ -261,6 +261,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('4-one');
       });
 
+      it('should return "8-nine" when input is 1,2,8,9', function() {
+        let app = new captcha(pattern,2,8,9);
+        expect(app.generate()).toEqual('8-nine');
+      });
+
   });
 
 });
