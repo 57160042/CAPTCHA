@@ -246,6 +246,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('6-eight');
       });
 
+      it('should return "7-zero" when input is 1,2,7,0', function() {
+        let app = new captcha(pattern,2,7,0);
+        expect(app.generate()).toEqual('7-zero');
+      });
+
   });
 
 });
