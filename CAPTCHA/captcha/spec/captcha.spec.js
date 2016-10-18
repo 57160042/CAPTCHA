@@ -335,6 +335,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('one-1');
     });
 
+    it('should return "three*4" when input is 2,3,3,4', function() {
+        let app = new captcha(pattern,3,3,4);
+        expect(app.generate()).toEqual('three*4');
+    });
+
 
   });
 
