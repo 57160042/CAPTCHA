@@ -17,8 +17,11 @@ function operator(OperatorValue) {
     if (OperatorValue === 1){
       return "+";
     }
-    if (OperatorValue === 2){
+    else if (OperatorValue === 2){
       return "-";
+    }
+    else if (OperatorValue === 3){
+      return "*";
     }
   }
 }
@@ -266,6 +269,12 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('8-nine');
       });
 
+      it('should return "8*four" when input is 1,3,8,4', function() {
+          let app = new captcha(pattern,3,8,4);
+          expect(app.generate()).toEqual('8*four');
+      });
+
+
   });
 
   describe("Pattrn is 2", function() {
@@ -326,10 +335,6 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('one-1');
     });
 
-    it('should return "8*four" when input is 1,3,8,4', function() {
-        let app = new captcha(pattern,3,8,4);
-        expect(app.generate()).toEqual('8*four');
-    });
 
   });
 
