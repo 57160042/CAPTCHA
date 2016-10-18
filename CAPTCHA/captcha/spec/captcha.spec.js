@@ -23,6 +23,9 @@ function operator(OperatorValue) {
     else if (OperatorValue === 3){
       return "*";
     }
+    else if (OperatorValue === 4){
+      return "/";
+    }
   }
 }
 
