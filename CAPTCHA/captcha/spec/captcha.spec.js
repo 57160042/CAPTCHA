@@ -340,6 +340,11 @@ describe("CATPCHA", function() {
         expect(app.generate()).toEqual('three*4');
     });
 
+    it('should return "two/2" when input is 2,4,2,2', function() {
+        let app = new captcha(pattern,4,2,2);
+        expect(app.generate()).toEqual('two/2');
+    });
+
 
   });
 
